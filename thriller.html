@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thriller Anime - Watch List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <main class="main-container">
+    <div class="layout-wrapper">
+      
+      <h2 class="sidebar-title">Thriller</h2>
+
+      <div class="grid-card-wrapper">
+        <div class="black-spacer-bar"></div>
+
+        <div class="search-container">
+  <input type="text" id="animeSearch" placeholder="Search anime...">
+</div>
+
+        <div class="category-grid anime-page-grid">
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Death Note</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Monster</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>The Promised Neverland</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>ERASED</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Parasyte -the maxim-</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Summertime Rendering</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Link Click</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span>Thriller Title 8</span></div>
+            <div class="description-box"><p>Re:ZERO -Starting Life in Another World-</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById('animeSearch');
+    const animeCards = document.querySelectorAll('.category-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase().trim();
+
+      animeCards.forEach(card => {
+        const title = card.querySelector('.description-box p').textContent.toLowerCase();
+
+        if (title.includes(searchTerm)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

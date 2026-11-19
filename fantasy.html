@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantasy Anime - Watch List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <main class="main-container">
+    <div class="layout-wrapper">
+      
+      <h2 class="sidebar-title">Fantasy</h2>
+
+      <div class="grid-card-wrapper">
+        <div class="black-spacer-bar"></div>
+
+        <div class="search-container">
+  <input type="text" id="animeSearch" placeholder="Search anime...">
+</div>
+
+        <div class="category-grid anime-page-grid">
+
+          <div class="category-card anime-card">
+            <div class="content-box anime-box">
+              <span></span>
+            </div>
+            <div class="description-box">
+              <p>Frieren: Beyond Journey's End</p>
+            </div>
+          </div>
+
+          <div class="category-card anime-card">
+            <div class="content-box anime-box">
+              <span></span>
+            </div>
+            <div class="description-box">
+              <p>delicious in dungeon</p>
+            </div>
+          </div>
+
+          <div class="category-card anime-card">
+            <div class="content-box anime-box">
+              <span></span>
+            </div>
+            <div class="description-box">
+              <p>Fate/Zero</p>
+            </div>
+          </div>
+
+          <div class="category-card anime-card">
+            <div class="content-box anime-box">
+              <span></span>
+            </div>
+            <div class="description-box">
+              <p>Magi: The Labyrinth of Magic</p>
+            </div>
+          </div>
+
+
+          <div class="category-card anime-card">
+            <div class="content-box anime-box">
+              <span></span>
+            </div>
+            <div class="description-box">
+              <p>That Time I Got Reincarnated as a Slime</p>
+            </div>
+          </div>
+
+          <div class="category-card anime-card">
+            <div class="content-box anime-box">
+
+            </div>
+            <div class="description-box">
+              <p>Little Witch Academia</p>
+            </div>
+          </div>
+
+          <div class="category-card anime-card">
+            <div class="content-box anime-box">
+              <span></span>
+            </div>
+            <div class="description-box">
+              <p>Made in Abyss</p>
+            </div>
+          </div>
+
+          <div class="category-card anime-card">
+            <div class="content-box anime-box">
+              <span></span>
+            </div>
+            <div class="description-box">
+              <p>Sailor Moon</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById('animeSearch');
+    const animeCards = document.querySelectorAll('.category-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase().trim();
+
+      animeCards.forEach(card => {
+        const title = card.querySelector('.description-box p').textContent.toLowerCase();
+
+        if (title.includes(searchTerm)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

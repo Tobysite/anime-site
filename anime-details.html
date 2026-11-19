@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="main-container">
+    <div class="layout-wrapper">
+      
+      <a href="action.html" class="back-link">← Back to Action</a>
+
+      <div class="details-container" style="margin-top: 20px; color: white;">
+        <h1 id="anime-title">Loading Title...</h1>
+        <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
+          <img id="anime-img" src="" alt="Anime Cover" style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px;">
+          <div style="flex: 1; min-width: 250px;">
+            <h3>Synopsis</h3>
+            <p id="anime-desc" style="margin-top: 10px; line-height: 1.6;">Loading description...</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    
+    const title = params.get('title');
+    const img = params.get('img');
+    const desc = params.get('desc');
+
+    if (title) document.getElementById('anime-title').textContent = title;
+    if (img) document.getElementById('anime-img').src = img;
+    if (desc) document.getElementById('anime-desc').textContent = desc;
+  </script>
+
+</body>
+</html>

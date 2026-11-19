@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slice of Life Anime - Watch List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <main class="main-container">
+    <div class="layout-wrapper">
+      
+      <h2 class="sidebar-title">Slice of Life</h2>
+
+      <div class="grid-card-wrapper">
+        <div class="black-spacer-bar"></div>
+
+        <div class="search-container">
+  <input type="text" id="animeSearch" placeholder="Search anime...">
+</div>
+
+        <div class="category-grid anime-page-grid">
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>K-On!</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Bocchi the Rock!</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Nichijou</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Lucky Star</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Komi Can't Communicate</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>My Deer Friend Nokotan</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Okko's Inn</p></div>
+          </div>
+          <div class="category-card anime-card">
+            <div class="content-box anime-box"><span></span></div>
+            <div class="description-box"><p>Hyouka</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById('animeSearch');
+    const animeCards = document.querySelectorAll('.category-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase().trim();
+
+      animeCards.forEach(card => {
+        const title = card.querySelector('.description-box p').textContent.toLowerCase();
+
+        if (title.includes(searchTerm)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
